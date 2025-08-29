@@ -5,6 +5,7 @@ int main() {
     int torre;
     int bispo = 0;
     int rainha = 0;
+    int cavalo = 0;
 
     // torre
     // mover a torre 5 casas para a direita
@@ -29,6 +30,24 @@ int main() {
         printf("esquerda\n");
         rainha++;
     } while (rainha < 8);
+
+
+        // cavalo
+    //mover 2 para baixo e 1 para esquerda
+    printf("\n\n===CAVALO===\n");
+    for (cavalo = 0; cavalo <= 2; cavalo++)
+    {
+        printf("baixo\n");
+        cavalo++;
+    }
+        int esquerda = 0;
+
+        while (esquerda < 1)
+        {
+          printf("esquerda\n");
+          esquerda++;
+        }
+
 
     return 0;
 }
