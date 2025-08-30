@@ -1,52 +1,65 @@
 #include <stdio.h>
 
-int main() {
+//recursiva para mover a torre (direita)
+void mover_torre(int casas) {
+    if (casas > 0) {
+        printf("direita\n");
+        mover_torre(casas - 1);
+    }
+}
 
-    int torre;
-    int bispo = 0;
-    int rainha = 0;
-    int cavalo = 0;
+void mover_bispo(int casas) {
+    if (casas > 0) {
+        for (int i = 0; i < 1; i++) {
+            printf("cima, direita\n");
+        }
+        mover_bispo(casas - 1);
+    }
+}
+
+void mover_rainha(int casas) {
+    if (casas > 0) {
+        printf("esquerda\n");
+        mover_rainha(casas - 1);
+    }
+}
+
+int main() {
 
     // torre
     // mover a torre 5 casas para a direita
     printf("\n\n===TORRE===\n");
-    for (torre = 0; torre < 5; torre++){
-        printf("direita\n"); // imprime a direção do movimento
-    }
-
-    // bisco
+    mover_torre(5);
+    
+    
+    // bispo
     // mover o bispo 5 vezes para cima e direita
     printf("\n\n===BISPO===\n");
-    while(bispo < 5){
-        printf("cima, direita\n");
-        bispo++;
-    }
-    
+    mover_bispo(5);
+
 
     // rainha
     //mover 8 vezes a rainha para esquerda
     printf("\n\n===RAINHA===\n");
-    do{
-        printf("esquerda\n");
-        rainha++;
-    } while (rainha < 8);
+    mover_rainha(8);
 
 
-        // cavalo
+    // cavalo
     //mover 2 para baixo e 1 para esquerda
     printf("\n\n===CAVALO===\n");
-    for (cavalo = 0; cavalo <= 2; cavalo++)
+    for (int cavalo = 0; cavalo < 2; cavalo++)
     {
-        printf("baixo\n");
-        cavalo++;
-    }
-        int esquerda = 0;
-
-        while (esquerda < 1)
+        printf("cima\n");
+    if (cavalo == 1) 
+    {
+        int direita = 0;
+        while (direita < 1) 
         {
-          printf("esquerda\n");
-          esquerda++;
+            printf("direita\n");
+            direita++;
         }
+    }
+    }
 
 
     return 0;
